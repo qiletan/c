@@ -20,3 +20,6 @@ found at this [thread](https://www.kaggle.com/c/home-credit-default-risk/discuss
 
 4. Great [open solution](https://github.com/neptune-ml/open-solution-home-credit). I blended this to my final submissions. It boosted up my results
 by at least 10 to 20%
+
+5. Imputation for the EX_SOURCE helped. The three external scores turns out to be the top performing features for most of the teams and it was established quite early on during the comp. However, I didn't see any one trying to impute the missing values for those. I used 
+LightGBM to predict the missing values by using the main application data only. To train the model, I used really simple parameters to help overfitting and 2-fold cv to help speedup. The objective function I used is RMSE.
